@@ -15,7 +15,7 @@ Syntax highlighted code block
 Immersal is a company specializing on using point clouds for recognizing spatial environment.
 Interesting in connection with the Nreal AR glasses.
 
-https://immersal.com/
+[Immersal](https://immersal.com/)
 
 ## Header 2
 ### Header 3
