@@ -3,7 +3,11 @@
 You can use the [editor on GitHub](https://github.com/HaraldHeide/haraldheide.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Header 1
+Immersal is a company specializing on using point clouds for recognizing spatial environment.
+Interesting in connection with the Nreal AR glasses.
 
+[Immersal](https://immersal.com/)
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
@@ -12,11 +16,6 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 Syntax highlighted code block
 
 # Header 1
-Immersal is a company specializing on using point clouds for recognizing spatial environment.
-Interesting in connection with the Nreal AR glasses.
-
-[Immersal](https://immersal.com/)
-
 ## Header 2
 ### Header 3
 
