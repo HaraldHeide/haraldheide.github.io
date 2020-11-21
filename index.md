@@ -12,6 +12,11 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 Syntax highlighted code block
 
 # Header 1
+Immersal is a company specializing on using point clouds for recognizing spatial environment.
+Interesting in connection with the Nreal AR glasses.
+
+https://immersal.com/
+
 ## Header 2
 ### Header 3
 
