@@ -1,4 +1,5 @@
 import * as THREE from '../../libs/three/three.module.js';
+import { VRButton } from '../../libs/three/jsm/VRButton.js';
 import { GLTFLoader } from '../../libs/three/jsm/GLTFLoader.js';
 import { FBXLoader } from '../../libs/three/jsm/FBXLoader.js';
 import { RGBELoader } from '../../libs/three/jsm/RGBELoader.js';
@@ -39,6 +40,9 @@ class App{
         this.controls = new OrbitControls( this.camera, this.renderer.domElement );
         this.controls.target.set(0, 3.5, 0);
         this.controls.update();
+
+        //hhe
+        this.setupVR();
         
         window.addEventListener('resize', this.resize.bind(this) );
 	}	
@@ -134,6 +138,13 @@ class App{
         );
     }
     
+     //hhe
+     setupVR(){
+        this.renderer.xr.enabled = true;
+        
+        document.body.appendChild( VRButton.createButton( this.renderer ) );
+    }
+
     resize() {
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix();
