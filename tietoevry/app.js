@@ -68,7 +68,7 @@ class App{
 		// Load a glTF resource
 		loader.load(
 			// resource URL
-			'tieto.glb','EVRY.glb',
+			'tieto.glb',
 			// called when the resource is loaded
 			function ( gltf ) {
                 const bbox = new THREE.Box3().setFromObject( gltf.scene );
