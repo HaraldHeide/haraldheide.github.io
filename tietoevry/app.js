@@ -61,8 +61,7 @@ class App{
         } );
     }
     
-    loadGLTF()
-    {
+    loadGLTF(){
         const loader = new GLTFLoader( ).setPath('../../assets/');
         const self = this;
 		
@@ -98,8 +97,7 @@ class App{
 				
 			},
 			// called when loading has errors
-			function ( error ) 
-            {
+			function ( error ) {
 
 				console.log( 'An error happened' );
 
@@ -136,7 +134,7 @@ class App{
         );
     }
     
-    resize(){
+    resize() {
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize( window.innerWidth, window.innerHeight );  
