@@ -70,7 +70,7 @@ class App{
 		// Load a glTF resource
 		loader.load(
 			// resource URL
-			'EVRY.glb',
+			'office-chair.glb',
 			// called when the resource is loaded
 			function ( gltf ) {
                 const bbox = new THREE.Box3().setFromObject( gltf.scene );
