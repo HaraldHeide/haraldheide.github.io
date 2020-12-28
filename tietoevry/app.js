@@ -5,10 +5,8 @@ import { RGBELoader } from '../../libs/three/jsm/RGBELoader.js';
 import { OrbitControls } from '../../libs/three/jsm/OrbitControls.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
 
-class App
-{
-	constructor()
-    {
+class App{
+	constructor(){
 		const container = document.createElement( 'div' );
 		document.body.appendChild( container );
         
