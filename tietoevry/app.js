@@ -68,7 +68,7 @@ class App{
 		// Load a glTF resource
 		loader.load(
 			// resource URL
-			'tieto.glb',
+			'TietoEVRY.glb',
 			// called when the resource is loaded
 			function ( gltf ) {
                 const bbox = new THREE.Box3().setFromObject( gltf.scene );
@@ -81,8 +81,8 @@ class App{
                 })
                 self.chair = gltf.scene;
                 //hhe
-                self.chair.scale.set(20,20,20);
-                self.chair.position.set(0,8.0,0);
+               // self.chair.scale.set(20,20,20);
+                self.chair.position.set(0,1.0,0);
                 
 				self.scene.add( gltf.scene );
                 
