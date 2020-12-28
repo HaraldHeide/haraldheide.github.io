@@ -5,8 +5,10 @@ import { RGBELoader } from '../../libs/three/jsm/RGBELoader.js';
 import { OrbitControls } from '../../libs/three/jsm/OrbitControls.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
 
-class App{
-	constructor(){
+class App
+{
+	constructor()
+    {
 		const container = document.createElement( 'div' );
 		document.body.appendChild( container );
         
@@ -61,48 +63,12 @@ class App{
         } );
     }
     
-    loadGLTF(){
+    loadGLTF()
+    {
         const loader = new GLTFLoader( ).setPath('../../assets/');
         const self = this;
 		
 		// Load a glTF resource
-		loader.load(
-			// resource URL
-			'EVRY.glb',
-			// called when the resource is loaded
-			function ( gltf ) {
-                const bbox = new THREE.Box3().setFromObject( gltf.scene );
-                console.log(`min:${bbox.min.x.toFixed(2)},${bbox.min.y.toFixed(2)},${bbox.min.z.toFixed(2)} -  max:${bbox.max.x.toFixed(2)},${bbox.max.y.toFixed(2)},${bbox.max.z.toFixed(2)}`);
-                
-                gltf.scene.traverse( ( child ) => {
-                    if (child.isMesh){
-                        child.material.metalness = 0.2;
-                    }
-                })
-                self.logo = gltf.scene;
-                //hhe
-                self.logo.scale.set(20,20,20);
-                self.logo.position.set(0,5.0,0);
-                
-				self.scene.add( gltf.scene );
-                
-                self.loadingBar.visible = false;
-				
-				self.renderer.setAnimationLoop( self.render.bind(self));
-			},
-			// called while loading is progressing
-			function ( xhr ) {
-
-				self.loadingBar.progress = (xhr.loaded / xhr.total);
-				
-			},
-			// called when loading has errors
-			function ( error ) {
-
-				console.log( 'An error happened' );
-
-			}  
-
 		loader.load(
 			// resource URL
 			'tieto.glb',
@@ -134,7 +100,8 @@ class App{
 				
 			},
 			// called when loading has errors
-			function ( error ) {
+			function ( error ) 
+            {
 
 				console.log( 'An error happened' );
 
@@ -178,7 +145,6 @@ class App{
     }
     
 	render( ) {   
-        this.logo.rotateY( -0.01 );
         this.chair.rotateY( 0.01 );
         this.renderer.render( this.scene, this.camera );
     }
