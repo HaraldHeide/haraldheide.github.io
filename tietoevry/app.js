@@ -6,8 +6,7 @@ import { OrbitControls } from '../../libs/three/jsm/OrbitControls.js';
 import { LoadingBar } from '../../libs/LoadingBar.js';
 
 class App{
-	constructor()
-    {
+	constructor(){
 		const container = document.createElement( 'div' );
 		document.body.appendChild( container );
         
@@ -44,8 +43,7 @@ class App{
         window.addEventListener('resize', this.resize.bind(this) );
 	}	
     
-    setEnvironment()
-    {
+    setEnvironment(){
         const loader = new RGBELoader().setDataType( THREE.UnsignedByteType );
         const pmremGenerator = new THREE.PMREMGenerator( this.renderer );
         pmremGenerator.compileEquirectangularShader();
@@ -99,6 +97,7 @@ class App{
 			function ( error ) {
 
 				console.log( 'An error happened' );
+
 			}  
         );
     }
