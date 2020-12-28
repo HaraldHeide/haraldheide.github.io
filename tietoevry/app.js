@@ -82,7 +82,7 @@ class App{
                 self.chair = gltf.scene;
                 //hhe
                 self.chair.scale.set(20,20,20);
-                serlf.chair.position.set(0,-5,0);
+                serlf.chair.position.set(0,5.0,0);
                 
 				self.scene.add( gltf.scene );
                 
