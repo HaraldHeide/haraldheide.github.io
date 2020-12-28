@@ -80,6 +80,7 @@ class App{
                     }
                 })
                 self.chair = gltf.scene;
+                self.chair.scale.set(20,20,20);
                 
 				self.scene.add( gltf.scene );
                 
