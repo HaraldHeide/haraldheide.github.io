@@ -140,9 +140,9 @@ class App{
     }
     
 	render( ) {   
-        this.chair.scaleX( 4.0 );
-        this.chair.scaleY( 4.0 );
-        this.chair.scaleZ( 4.0 );
+        this.chair.scaleX( 100.0 );
+        this.chair.scaleY( 100.0 );
+        this.chair.scaleZ( 100.0 );
         this.chair.rotateY( 0.01 );
         this.renderer.render( this.scene, this.camera );
     }
