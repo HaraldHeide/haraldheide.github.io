@@ -63,8 +63,7 @@ class App{
         } );
     }
     
-    loadGLTF()
-    {
+    loadGLTF(){
         const loader = new GLTFLoader( ).setPath('../../assets/');
         const self = this;
 		
@@ -140,9 +139,6 @@ class App{
     }
     
 	render( ) {   
-      //  this.chair.scaleX( 10.0 );
-      //  this.chair.scaleY( 10.0 );
-      //  this.chair.scaleZ( 10.0 );
         this.chair.rotateY( 0.01 );
         this.renderer.render( this.scene, this.camera );
     }
