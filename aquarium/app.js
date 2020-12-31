@@ -17,12 +17,14 @@ class App {
         this.scene = new THREE.Scene();
         this.scene.background = new THREE.Color(0xaaaaaa);
 
+        //#region Lighting
         const ambient = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 0.5);
         this.scene.add(ambient);
 
         const light = new THREE.DirectionalLight(0xFFFFFF, 1.5);
         light.position.set(0.2, 1, 1);
         this.scene.add(light);
+        //#endregion
 
         this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         this.renderer.setPixelRatio(window.devicePixelRatio);
