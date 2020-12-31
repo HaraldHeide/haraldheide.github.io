@@ -89,24 +89,17 @@ class App {
                 //hhe
                 // self.chair.scale.set(20,20,20);
                 self.chair.position.set(0, 4.0, 0);
-
                 self.scene.add(gltf.scene);
-
                 self.loadingBar.visible = false;
-
                 self.renderer.setAnimationLoop(self.render.bind(self));
             },
             // called while loading is progressing
             function (xhr) {
-
                 self.loadingBar.progress = (xhr.loaded / xhr.total);
-
             },
             // called when loading has errors
             function (error) {
-
                 console.log('An error happened');
-
             }
         );
     }
@@ -158,4 +151,26 @@ class App {
     }
 }
 
+class FlockManager {
+    constructor() {
+        const fishPrefab;  //prefab
+        let numFish = 20;
+        let allFish = {};  //array
+        let swimLimits = new Vector3(5, 5, 5);
+
+        this.Start();
+    }
+
+    Start() {
+        allFish = new objectArray[numFish];
+
+        for (let i = 0; i < numFish; i++) {
+            Vector3 pos = this.allFish.position.setPosition(
+                ranom.rangex, y, z)
+            allFish[i] //Instantiate
+            )
+        }
+    }
+
+}
 export { App };
