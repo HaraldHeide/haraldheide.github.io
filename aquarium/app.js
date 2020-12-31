@@ -34,7 +34,7 @@ class App {
 
         this.loadingBar = new LoadingBar();
 
-        this.loadGLTF();
+        this.loadGLTF('TietoEVRY.glb');
         //this.loadFBX();
 
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
@@ -65,14 +65,14 @@ class App {
         });
     }
 
-    loadGLTF() {
+    loadGLTF(obj) {
         const loader = new GLTFLoader().setPath('../../assets/');
         const self = this;
 
         // Load a glTF resource
         loader.load(
             // resource URL
-            'TietoEVRY.glb',
+            obj,
             // called when the resource is loaded
             function (gltf) {
                 const bbox = new THREE.Box3().setFromObject(gltf.scene);
