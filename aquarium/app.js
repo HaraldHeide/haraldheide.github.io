@@ -66,7 +66,8 @@ class App {
     }
 
     loadGLTF(fish) {
-        const loader = new GLTFLoader().setPath('../../assets/aquarium/');
+        //const loader = new GLTFLoader().setPath('../../assets/aquarium/');
+        const loader = new GLTFLoader().setPath('./assets/');
         const self = this;
 
         // Load a glTF resource
