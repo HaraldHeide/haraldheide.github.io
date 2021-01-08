@@ -34,7 +34,7 @@ class App {
 
         this.loadingBar = new LoadingBar();
 
-        this.loadGLTF();
+        this.loadGLTF('chaetodon_collare.glb');
         //this.loadFBX();
 
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
@@ -65,14 +65,15 @@ class App {
         });
     }
 
-    loadGLTF() {
+    loadGLTF(fish) {
         const loader = new GLTFLoader().setPath('../../assets/aquarium/');
         const self = this;
 
         // Load a glTF resource
         loader.load(
             // resource URL
-            'chaetodon_collare.glb',
+            // 'chaetodon_collare.glb',
+            fish,
             // called when the resource is loaded
             function (gltf) {
                 const bbox = new THREE.Box3().setFromObject(gltf.scene);
@@ -96,15 +97,11 @@ class App {
             },
             // called while loading is progressing
             function (xhr) {
-
                 self.loadingBar.progress = (xhr.loaded / xhr.total);
-
             },
             // called when loading has errors
             function (error) {
-
                 console.log('An error happened');
-
             }
         );
     }
@@ -131,9 +128,7 @@ class App {
             },
             // called when loading has errors
             function (error) {
-
                 console.log('An error happened');
-
             }
         );
     }
@@ -141,7 +136,6 @@ class App {
     //hhe
     setupVR() {
         this.renderer.xr.enabled = true;
-
         document.body.appendChild(VRButton.createButton(this.renderer));
     }
 
@@ -156,5 +150,4 @@ class App {
         this.renderer.render(this.scene, this.camera);
     }
 }
-
 export { App };
