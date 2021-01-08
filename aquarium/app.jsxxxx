@@ -17,12 +17,14 @@ class App {
         this.scene = new THREE.Scene();
         this.scene.background = new THREE.Color(0xaaaaaa);
 
+        //#region Lighting
         const ambient = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 0.5);
         this.scene.add(ambient);
 
         const light = new THREE.DirectionalLight(0xFFFFFF, 1.5);
         light.position.set(0.2, 1, 1);
         this.scene.add(light);
+        //#endregion
 
         this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         this.renderer.setPixelRatio(window.devicePixelRatio);
@@ -34,7 +36,7 @@ class App {
 
         this.loadingBar = new LoadingBar();
 
-        this.loadGLTF();
+        this.loadGLTF('TietoEVRY.glb');
         //this.loadFBX();
 
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
@@ -65,14 +67,14 @@ class App {
         });
     }
 
-    loadGLTF() {
-        const loader = new GLTFLoader().setPath('../../assets/aquarium/');
+    loadGLTF(obj) {
+        const loader = new GLTFLoader().setPath('../../assets/');
         const self = this;
 
         // Load a glTF resource
         loader.load(
             // resource URL
-            'chaetodon_collare.glb',
+            obj,
             // called when the resource is loaded
             function (gltf) {
                 const bbox = new THREE.Box3().setFromObject(gltf.scene);
@@ -87,24 +89,17 @@ class App {
                 //hhe
                 // self.chair.scale.set(20,20,20);
                 self.chair.position.set(0, 4.0, 0);
-
                 self.scene.add(gltf.scene);
-
                 self.loadingBar.visible = false;
-
                 self.renderer.setAnimationLoop(self.render.bind(self));
             },
             // called while loading is progressing
             function (xhr) {
-
                 self.loadingBar.progress = (xhr.loaded / xhr.total);
-
             },
             // called when loading has errors
             function (error) {
-
                 console.log('An error happened');
-
             }
         );
     }
@@ -141,7 +136,6 @@ class App {
     //hhe
     setupVR() {
         this.renderer.xr.enabled = true;
-
         document.body.appendChild(VRButton.createButton(this.renderer));
     }
 
@@ -157,4 +151,26 @@ class App {
     }
 }
 
+class FlockManager {
+    constructor() {
+        const fishPrefab;  //prefab
+        let numFish = 20;
+        let allFish = {};  //array
+        let swimLimits = new Vector3(5, 5, 5);
+
+        this.Start();
+    }
+
+    Start() {
+        allFish = new objectArray[numFish];
+
+        for (let i = 0; i < numFish; i++) {
+            Vector3 pos = this.allFish.position.setPosition(
+                ranom.rangex, y, z)
+            allFish[i] //Instantiate
+            )
+        }
+    }
+
+}
 export { App };
